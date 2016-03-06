@@ -41,7 +41,7 @@ flow.serial([
                 // Читаем содержимое для каждого файла
                 flow.map(files, fs.readFile, next);
             }
-        ], function (error, data) {
+        ], 2, function (error, data) {
             next(error, data);
         });
     }
